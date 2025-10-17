@@ -1,0 +1,219 @@
+index.html 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LessonHalo — Literacy packs for CfE Second Level</title>
+  <meta name="description" content="LessonHalo helps Scottish primary teachers plan Literacy lessons in minutes. CfE Second Level. Calm, clear, fast.">
+  <style>
+    /* Brand: neutral, calm, no blue. Mobile first. */
+    :root{
+      --bg:#f5f3f0;       /* pale background */
+      --card:#ffffff;     /* white cards */
+      --ink:#2b2b2b;      /* main text */
+      --muted:#6b6b6b;    /* secondary text */
+      --line:#e7dfd8;     /* soft borders */
+      --accent:#d8c3ad;   /* soft sand */
+      --accent-2:#b7a6a0; /* soft heather */
+      --chip:#eee6df;     /* chip bg */
+      --chip-ink:#343434;
+      --ok:#2aa772;       /* positive CTA */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:920px;margin:0 auto;padding:22px}
+    .hero{padding:16px 0 8px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:42px;height:42px;border-radius:10px;
+      background:linear-gradient(145deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.5px
+    }
+    h1{margin:10px 0 6px;font-size:28px}
+    p.lead{margin:0 0 16px;color:var(--muted)}
+    .pill{display:inline-block;background:#efe9e2;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;margin-left:6px}
+
+    .card{background:var(--card);border-radius:14px;padding:18px 16px;margin:14px 0;border:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:10px 12px;border-radius:999px;background:var(--chip);color:var(--chip-ink);font-size:14px;border:1px solid var(--line)}
+
+    .row{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width:760px){ .row{grid-template-columns:1fr 1fr} }
+
+    .cta{display:inline-block;background:var(--ok);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700}
+    .cta-alt{display:inline-block;background:#efe9e2;border:1px solid var(--line);padding:10px 14px;border-radius:10px;color:#333}
+    small,.small{color:var(--muted)}
+    textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#fbf8f5}
+    .footer{padding:26px 0 40px;text-align:center;color:var(--muted);font-size:14px}
+    ul{padding-left:18px;margin:8px 0}
+    .badge{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">LH</div>
+        <div>
+          <strong>LessonHalo</strong><span class="pill">Light</span><br>
+          <small>Fast Literacy planning for Scottish primary teachers</small>
+        </div>
+      </div>
+      <h1>Plan CfE Literacy packs in minutes</h1>
+      <p class="lead">Drop in a short extract. Get a clean, classroom ready pack with success criteria, quick tasks, and evidence of learning. No pupil data. No admin.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta" href="#builder">Try the Light demo</a>
+        <a class="cta-alt" href="#panic">Open the Panic Pack</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Strategy chips -->
+    <section class="card" aria-labelledby="strategies">
+      <h2 id="strategies" style="margin:0 0 10px;font-size:20px;">Reading strategies</h2>
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">Predict</span>
+        <span class="chip" role="listitem">Question</span>
+        <span class="chip" role="listitem">Clarify</span>
+        <span class="chip" role="listitem">Summarise</span>
+        <span class="chip" role="listitem">Visualise</span>
+        <span class="chip" role="listitem">Connect</span>
+      </div>
+      <small class="badge">Aligned to CfE Second Level. P4 to P7.</small>
+    </section>
+
+    <!-- Two-up row -->
+    <section class="row">
+      <div class="card">
+        <h3 style="margin:0 0 8px;">What you get</h3>
+        <ul>
+          <li>Starter, main task, and exit ticket</li>
+          <li>Success criteria and quick differentiation</li>
+          <li>Evidence of learning for jotters or Seesaw</li>
+        </ul>
+      </div>
+
+      <!-- Builder -->
+      <div class="card" id="builder">
+        <h3 style="margin:0 0 6px;">Light demo</h3>
+        <p class="small">Paste a tiny extract and copy the pack text.</p>
+        <textarea id="extract" rows="5" placeholder="Paste a short extract here"></textarea>
+        <button id="make" class="cta" style="margin-top:10px">Make my pack</button>
+        <textarea id="output" rows="10" style="margin-top:10px;background:#ffffff" placeholder="Your pack will appear here"></textarea>
+        <small>Prototype only. The full generator will be added later.</small>
+      </div>
+    </section>
+
+    <!-- Panic Pack -->
+    <section class="card" id="panic">
+      <h3 style="margin:0 0 8px;">Panic Pack</h3>
+      <p class="small">For those days when time is tight. One click, instant plan.</p>
+      <button id="panicBtn" class="cta">Build me a quick plan</button>
+      <textarea id="panicOut" rows="10" style="margin-top:10px;background:#ffffff" placeholder="Click the button for a ready plan"></textarea>
+    </section>
+
+    <!-- Booklets -->
+    <section class="card">
+      <h3 style="margin:0 0 8px;">Booklets</h3>
+      <p class="small">Printable sets for guided reading or independent stations. Coming soon.</p>
+      <div class="chips">
+        <span class="chip">Non fiction pack</span>
+        <span class="chip">Character focus</span>
+        <span class="chip">Poetry mini</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© <span id="y"></span> LessonHalo</div>
+      <div class="small">Privacy friendly. No logins. No pupil data.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Light demo
+    const btn = document.getElementById('make');
+    const input = document.getElementById('extract');
+    const out = document.getElementById('output');
+
+    btn.addEventListener('click', () => {
+      const text = input.value.trim() || 'It was a wild bright morning across the glen and the air smelled of rain.';
+      out.value =
+`Lesson plan (Light)
+Level: CfE Second Level (P4 to P7)
+Focus: Reading strategies
+
+Learning Intentions
+- I can read a short extract and use strategies to make meaning.
+
+Success Criteria
+- I can predict, question, clarify tricky words, and summarise key ideas.
+
+Starter (5 min)
+- Quick read of the extract.
+- Turn and talk: What is happening and why.
+
+Main Task (15 to 20 min)
+- Use the six strategies: Predict, Question, Clarify, Summarise, Visualise, Connect.
+- Jotter set up: six short bullets, one for each strategy.
+
+Exit Ticket (2 min)
+- One sentence summary and one new question.
+
+Evidence of learning
+- Jotter photo or Seesaw note with six bullets.
+
+Extract
+"${text}"`;
+      out.focus();
+      out.select();
+    });
+
+    // Panic pack: instant plan with a stock extract
+    const panicBtn = document.getElementById('panicBtn');
+    const panicOut = document.getElementById('panicOut');
+    panicBtn.addEventListener('click', () => {
+      const sample = 'The wind lifted the heather in soft waves as the path curled toward the loch. A skylark flickered up, then vanished into the pale sky.';
+      panicOut.value =
+`Panic Pack — Quick Plan
+Level: CfE Second Level (P4 to P7)
+
+Learning Intentions
+- I can use reading strategies to understand a short text.
+
+Success Criteria
+- I can make a prediction, ask a useful question, clarify a word, and summarise the key idea.
+
+Starter (3 min)
+- Teacher read aloud the extract once. Pupils follow with finger.
+
+Fast Main (12 to 15 min)
+- Fold jotter into six boxes or draw six bullets.
+- Write: Predict, Question, Clarify, Summarise, Visualise, Connect.
+- Pupils complete one line for each strategy using the extract.
+
+Exit Ticket (2 min)
+- Write one clear summary sentence.
+
+Evidence of learning
+- Photo of the six-box page or upload to Seesaw.
+
+Extract
+"${sample}"`;
+      panicOut.focus();
+      panicOut.select();
+    });
+  </script>
+</body>
+</html>
